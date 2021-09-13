@@ -1,0 +1,280 @@
+@import "../sass/functions";  
+@import "../sass/variables";  
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+html{
+    font-size: 3.2vw;
+}
+body{
+    font-family: $primaryFont;
+    padding: 0; 
+    margin: 0;
+    font-weight: 300;
+}
+p{
+    margin: 0;
+    padding: 0;
+    font-size: rem(16);
+    line-height: rem(25);
+}
+ 
+.chat-screen{
+    position: fixed;   
+    bottom: 68px;
+    z-index: 9999;
+    width: rem(430);
+    right: 2rem;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: rem(15);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    .chat-header{
+        padding: rem(10) rem(25);
+        font-weight: bold;
+        justify-content: space-between;
+        align-items: center;
+        color: #625f5f;
+        font-size: rem(24);
+        border-bottom: 1px solid #e0e0e0;
+        .avatar{
+            width: rem(50);
+            height: rem(50);
+            border-radius: 50%;
+           
+        }
+        .user{
+            position: relative;
+            &:after{
+                content: '';
+                width: 0.625rem;
+                position: absolute;
+                height: 0.625rem;
+                background: green;
+                border-radius: 50%;
+                right: 1rem;
+                border: 1px solid white;
+                bottom: .5rem;
+            }
+        }
+    }
+    
+    .quick-actions{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+            &:first-child{
+                margin-right: rem(15);
+            }
+            .icons{
+                width: rem(30);
+            }
+        }
+        
+    }
+}
+.chatbot-body{
+    padding: rem(25);
+    max-height: 25rem;
+    overflow: auto;
+    .question{
+        background-color: #1b487f;
+        padding: rem(20);
+        color: white;
+        font-size: rem(18);
+        margin-bottom: rem(20);
+        border-radius: rem(15);
+    }
+    .section-apply{
+        padding: rem(25);
+        background: #090942;
+        border-radius: rem(15);
+        margin-top: rem(25);
+        h5{
+            font-size: rem(24);
+            margin: rem(10) 0 rem(20);
+            color: white;
+        }
+        p{  
+            font-size: rem(19);
+            color: #cacaca;
+            line-height: rem(30);
+        }
+    }
+    .btn-primary{
+        border: 1px solid #cacaca;
+        color: white;
+        font-size: rem(18);
+        padding: rem(10) rem(50);
+        background: transparent;
+        border-radius: rem(30);
+        
+        &:hover{
+            background: white;
+            transition: background .3s;
+            color: #090942;
+            cursor: pointer;
+        }
+
+    }
+    .reply{
+        background: #f5f5f5;
+        color: #525252;
+        padding: rem(20) rem(30);
+        border-radius: rem(15);
+        margin-top: rem(15);
+        font-size: rem(18);
+    }
+    .card{
+        padding: rem(25);
+        border-radius: rem(5);
+        margin-bottom: rem(25);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        h4{
+            font-size: rem(22);
+            margin: 0 0 rem(15) 0;
+            color: black;
+        }
+        a{
+            color: #1596e4;
+            text-decoration: none;
+        }
+    }
+}
+.chat-input{
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    input{
+        width: calc(100% - 3.2rem);
+        border: 0;
+        padding: rem(10) rem(25);
+        outline: none;
+    }
+    .input-action-icon{
+        width: rem(30);
+        white-space: nowrap;
+        position: absolute;
+        z-index: 1;
+        top: .8rem;
+        right: rem(25);
+        text-align: right;
+    }
+}
+.chatbot-table{
+    padding: rem(25) 0;
+    margin-top: rem(15);
+    table{
+    border-collapse: collapse;
+
+    thead{
+        th{
+            background: #36474f;
+            color: white;
+            padding: rem(18);
+            font-weight: 500;
+            line-height: 2rem;
+        }
+    }
+    td{
+        padding:  rem(14);
+        vertical-align: top;
+        color: #525252;
+        &:first-child{
+            color: #000;
+        }
+        
+    }
+    tr{
+        background: white;
+        &:nth-of-type(odd){
+            background: #eceff1;
+        }
+    }
+}
+.owl-theme .owl-dots .owl-dot span{
+        width: rem(8);
+        height: rem(8);
+    }
+
+.owl-theme{
+    .owl-nav{
+        button{
+            position: absolute;
+            top: -2.5rem;
+            color: white;
+            z-index: 99;
+            right: 0;
+            font-size: 3rem;
+        }
+        .owl-prev {
+            right: 7rem;
+            span{
+                font-size: 3rem;
+                color: white;
+            }
+        }
+        .owl-next {
+            
+            span{
+                font-size: 3rem;
+                color: white;
+                outline: none;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        
+    }
+ .owl-dots{
+    background: #263238;
+    position: absolute;
+    top: -1.4rem;
+    right: 0;
+    left: 0;
+    height: 3rem;
+    border-bottom: 1px solid #4b5e69;
+    .owl-dot{
+        margin-top: .8rem;
+        float: right;
+        &:first-child{
+            margin-right: 1.5rem;  
+        }
+    }
+    
+}
+.owl-nav [class*=owl-]:hover,
+.owl-nav [class*=owl-]:focus{
+    background: none;
+    outline: none;
+}
+}
+.owl-carousel{
+    padding-top: 1.6rem;
+}
+}
+
+.copyright{
+    text-align: right;
+    padding: rem(10) rem(25);
+    font-size: rem(14);
+    color: #afafaf;
+}
+@media only screen and (min-width: 768px) {
+    html{
+        font-size: 1vw ;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .chat-screen{
+        width: calc(100% - 2rem);
+        bottom: 0;
+        right: 0;
+        margin: 1rem;
+    }
+    .chatbot-body{
+        max-height: 35rem;
+    }
+}
